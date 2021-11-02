@@ -6,3 +6,6 @@
 **/*.pkl
 **/*.log
 **/*.ignore
+
+**/sources/language/ru_zaborona.json
+**/sources/language/uk_zaborona.json
