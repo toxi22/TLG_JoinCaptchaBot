@@ -10,9 +10,9 @@ Author:
 Creation date:
     09/09/2018
 Last modified date:
-    25/09/2021
+    24/01/2022
 Version:
-    1.23.3
+    1.25.1
 '''
 
 ###############################################################################
@@ -97,6 +97,16 @@ CONST = {
         bool(int(os_getenv("CAPTCHABOT_INIT_ENABLE", \
             SETTINGS["CAPTCHABOT_INIT_ENABLE"]))),
 
+    # Initial users send URLs enable/disable at Bot start
+    "INIT_URL_ENABLE": \
+        bool(int(os_getenv("CAPTCHABOT_INIT_URL_ENABLE", \
+            SETTINGS["CAPTCHABOT_INIT_URL_ENABLE"]))),
+
+    # Initial config regarding remove all messages sent by a user kicked
+    "INIT_RM_ALL_MSG": \
+        bool(int(os_getenv("CAPTCHABOT_INIT_RM_ALL_MSG", \
+            SETTINGS["CAPTCHABOT_INIT_RM_ALL_MSG"]))),
+
     # Initial captcha solve time
     "INIT_CAPTCHA_TIME": \
         int(os_getenv("CAPTCHABOT_INIT_CAPTCHA_TIME_MIN", \
@@ -117,12 +127,17 @@ CONST = {
         int(os_getenv("CAPTCHABOT_MAX_CONFIG_CAPTCHA_TIME", \
             SETTINGS["CAPTCHABOT_MAX_CONFIG_CAPTCHA_TIME"])),
 
-    # Default time (in mins) to self-remove self-destruct sent messages
+    # Standard auto-remove messages sent by Bot timeout (in seconds)
     "T_DEL_MSG": \
         int(os_getenv("CAPTCHABOT_T_DEL_MSG", \
             SETTINGS["CAPTCHABOT_T_DEL_MSG"])),
 
-    # Auto-remove custom welcome message timeout
+    # Fast auto-remove messages sent by Bot timeout (in seconds)
+    "T_FAST_DEL_MSG": \
+        int(os_getenv("CAPTCHABOT_T_FAST_DEL_MSG", \
+            SETTINGS["CAPTCHABOT_T_FAST_DEL_MSG"])),
+
+    # Auto-remove custom welcome message timeout (in seconds)
     "T_DEL_WELCOME_MSG": \
         int(os_getenv("CAPTCHABOT_T_DEL_WELCOME_MSG", \
             SETTINGS["CAPTCHABOT_T_DEL_WELCOME_MSG"])),
@@ -254,6 +269,7 @@ CONST = {
         "\nItalian / Italiano\n/language it\n" \
         "\nKannada / Kannada\n/language kn\n" \
         "\nKorean / 한국어\n/language ko\n" \
+        "\nPersian\n/language fa\n" \
         "\nPolish / Polskie\n/language pl\n" \
         "\nPortuguese-Brazil / Português-Brasil\n/language pt_br\n" \
         "\nRussian / Pусский\n/language ru\n" \
@@ -271,11 +287,8 @@ CONST = {
     # Developer Donation address
     "DEV_DONATION_ADDR": "https://www.buymeacoffee.com/joincaptchabot",
 
-    # Developer Bitcoin address
-    "DEV_BTC": "3N9wf3FunR6YNXonquBeWammaBZVzTXTyR",
-
     # Bot version
-    "VERSION": "1.23.3 (25/09/2021)"
+    "VERSION": "1.25.1 (24/01/2022)"
 }
 
 
@@ -290,6 +303,7 @@ TEXT = {
     "EO": {}, # Esperanto
     "ES": {}, # Spanish
     "EU": {}, # Basque
+    "FA": {}, # Persian
     "FR": {}, # French
     "GL": {}, # Galician
     "ID": {}, # Indonesian
