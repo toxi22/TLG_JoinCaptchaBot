@@ -39,7 +39,7 @@
         "Команде необходимо установить значение времени.\n\nПримеры:\n/time 30 sec\n/time 5 min\n/time 1 min",
 
     "WELCOME_TIME_NOT_ARG":
-        "Укажите время для удаления приветственного сообщения.\n\nПримеры:\n/welcome_msg_time 30 sec\n/welcome_msg_time 5 min\n/welcome_msg_time 1 min", 
+        "Команде необходимо установить значение времени для удаления приветственного сообщения.\n\nПримеры:\n/welcome_msg_time 30 sec\n/welcome_msg_time 5 min\n/welcome_msg_time 1 min", 
 
     "DIFFICULTY_CHANGE":
         "Сложность капчи успешно изменена на уровень {}.",
